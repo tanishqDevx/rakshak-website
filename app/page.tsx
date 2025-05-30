@@ -597,7 +597,7 @@ export default function Home() {
                 },
                 {
                   name: "Anirudha KSM",
-                  image: "/placeholder.svg?height=400&width=600",
+                  image: "/anirudha.jpg?height=400&width=600",
                   role: "CSE - A",
                   description: "24BD1A0503",
                 },
