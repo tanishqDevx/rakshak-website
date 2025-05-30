@@ -2,9 +2,7 @@
 
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Cpu, Compass, RotateCw, Satellite } from "lucide-react"
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { AnimatedSection } from "@/components/animated-section"
 
@@ -14,7 +12,6 @@ export default function Technicalities() {
     {
       icon: Cpu,
       name: "NVIDIA Jetson Nano",
-      image: "/jetson-nano.jpg",
       description:
         "The Jetson Nano is the main onboard computer, responsible for running AI models, computer vision, and sensor fusion. It features a quad-core ARM Cortex-A57 CPU and a 128-core Maxwell GPU, making it ideal for real-time inference and robotics applications.",
       specs: [
@@ -33,7 +30,6 @@ export default function Technicalities() {
     {
       icon: Cpu,
       name: "Pixhawk Flight Controller",
-      image: "/pixhawk.jpg",
       description:
         "Pixhawk is an advanced open-source flight controller used for precise motor control, sensor integration, and autonomous navigation. It interfaces with the Jetson Nano for high-level commands and handles low-level real-time tasks.",
       specs: [
@@ -50,7 +46,6 @@ export default function Technicalities() {
     {
       icon: Compass,
       name: "RPLIDAR A1",
-      image: "/rplidar.jpg",
       description:
         "The RPLIDAR A1 is a 360-degree 2D laser scanner (LIDAR) used for mapping, obstacle detection, and SLAM (Simultaneous Localization and Mapping). It provides real-time distance measurements to help the rover navigate complex environments.",
       specs: [
@@ -67,7 +62,6 @@ export default function Technicalities() {
     {
       icon: Compass,
       name: "YDLIDAR OS30A",
-      image: "/ydlidar.jpg",
       description:
         "The YDLIDAR OS30A is a secondary LIDAR sensor, providing additional data for redundancy and improved mapping accuracy. It is especially useful for detecting obstacles at different heights.",
       specs: [
@@ -77,13 +71,12 @@ export default function Technicalities() {
         { label: "Interface", value: "USB" },
       ],
       links: [
-        { label: "Official Site", url: "https://www.ydlidar.com/products/view/OS30A" },
+        { label: "Official Site", url: "https://www.ydlidar.com/products/view/23.html" },
       ],
     },
     {
       icon: Compass,
       name: "GPS M8N",
-      image: "/gps-m8n.jpg",
       description:
         "The GPS M8N module provides accurate positioning for outdoor navigation and patrol route tracking. It supports multiple satellite systems for improved reliability.",
       specs: [
@@ -99,7 +92,6 @@ export default function Technicalities() {
     {
       icon: Compass,
       name: "Logitech C270 Webcam",
-      image: "/logitech-c270.jpg",
       description:
         "A 720p HD webcam used for real-time video streaming, computer vision, and intruder detection. It is mounted on a gimbal for adjustable viewing angles.",
       specs: [
@@ -114,7 +106,6 @@ export default function Technicalities() {
     {
       icon: RotateCw,
       name: "Waveshare DDSM 115 Motors",
-      image: "/ddsm-motor.jpg",
       description:
         "High-torque DC motors for robust locomotion, enabling the rover to traverse rough terrain and obstacles.",
       specs: [
@@ -129,7 +120,6 @@ export default function Technicalities() {
     {
       icon: RotateCw,
       name: "Waveshare DDSM HAT-A Motor Controller",
-      image: "/ddsm-hat.jpg",
       description:
         "A motor controller HAT for precise speed and direction control of the DDSM motors, interfacing with the Jetson Nano and Pixhawk.",
       specs: [
@@ -138,13 +128,12 @@ export default function Technicalities() {
         { label: "Interface", value: "I2C, UART" },
       ],
       links: [
-        { label: "Product Page", url: "https://www.waveshare.com/ddsm-driver-hat-a.htm" },
+        { label: "Product Page", url: "https://www.waveshare.com/ddsm-hat-a.htm" },
       ],
     },
     {
       icon: RotateCw,
       name: "Brushless 2-Axis Gimbal",
-      image: "/gimbal.jpg",
       description:
         "A brushless gimbal system for stabilizing the camera, allowing smooth video capture and dynamic tracking of objects.",
       specs: [
@@ -157,7 +146,6 @@ export default function Technicalities() {
     {
       icon: RotateCw,
       name: "LiPo 5200mAh 14.8V Battery",
-      image: "/lipo-battery.jpg",
       description:
         "A high-capacity lithium polymer battery providing up to 3 hours of operation, with built-in safety features.",
       specs: [
@@ -171,7 +159,6 @@ export default function Technicalities() {
     {
       icon: Satellite,
       name: "Communication Modules",
-      image: "/comm-modules.jpg",
       description:
         "Multiple communication modules for robust connectivity, including Wi-Fi, Bluetooth, long-range radio, and RC.",
       specs: [
@@ -267,20 +254,6 @@ export default function Technicalities() {
               >
                 <Card className="overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-lg">
                   <CardHeader>
-                    <div className="flex justify-center mb-4">
-                      <motion.div
-                        className="relative h-32 w-32 rounded-lg overflow-hidden border bg-background"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <Image
-                          src={comp.image}
-                          alt={comp.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </motion.div>
-                    </div>
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <comp.icon className="h-6 w-6 text-primary" />
                       <CardTitle className="text-center">{comp.name}</CardTitle>
@@ -322,93 +295,6 @@ export default function Technicalities() {
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Media Section */}
-      <AnimatedSection id="media" className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <Badge variant="outline" className="mb-2">
-                Media
-              </Badge>
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Photos & Videos</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                Explore high-resolution images and demonstration videos of RAKSHAK in action.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto py-12">
-            <Tabs defaultValue="photos" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 md:grid-cols-3">
-                <TabsTrigger value="photos">Photos</TabsTrigger>
-                <TabsTrigger value="videos">Videos</TabsTrigger>
-                <TabsTrigger value="diagrams">Diagrams</TabsTrigger>
-              </TabsList>
-              <TabsContent value="photos" className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Replace with your actual images */}
-                  <Image
-                    src="/rakshak-front.jpg"
-                    alt="RAKSHAK Front View"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full rounded-lg"
-                  />
-                  <Image
-                    src="/rakshak-side.jpg"
-                    alt="RAKSHAK Side View"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full rounded-lg"
-                  />
-                </div>
-              </TabsContent>
-              <TabsContent value="videos" className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Replace with your actual video links */}
-                  <div className="aspect-video w-full rounded-lg overflow-hidden bg-black">
-                    <iframe
-                      src="https://www.youtube.com/embed/your_video_id"
-                      title="RAKSHAK Demo Video"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
-                  <div className="aspect-video w-full rounded-lg overflow-hidden bg-black">
-                    <iframe
-                      src="https://www.youtube.com/embed/your_video_id2"
-                      title="RAKSHAK Field Test"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-              <TabsContent value="diagrams" className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Replace with your actual diagrams */}
-                  <Image
-                    src="/system-architecture.png"
-                    alt="System Architecture Diagram"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full rounded-lg"
-                  />
-                  <Image
-                    src="/wiring-diagram.png"
-                    alt="Wiring Diagram"
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full rounded-lg"
-                  />
-                </div>
-              </TabsContent>
-            </Tabs>
           </div>
         </div>
       </AnimatedSection>
