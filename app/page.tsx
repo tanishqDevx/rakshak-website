@@ -739,7 +739,7 @@ export default function Home() {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link
-                href="https://github.com/rakshak-project"
+                href="https://github.com/Team-Aston"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-md p-2 hover:bg-accent"
@@ -752,7 +752,7 @@ export default function Home() {
               whileHover={{ scale: 1.2, rotate: -5 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Link href="mailto:contact@rakshak-project.org" className="rounded-md p-2 hover:bg-accent">
+              <Link href="mailto:shoaibkulsums@gmail.com" className="rounded-md p-2 hover:bg-accent">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </Link>
