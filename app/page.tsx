@@ -341,7 +341,7 @@ export default function Home() {
                       transition={{ duration: 0.3 }}
                     >
                       <Image
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/rover11.png?height=400&width=600"
                         alt="RAKSHAK Rover Front View"
                         width={600}
                         height={400}
@@ -354,7 +354,7 @@ export default function Home() {
                       transition={{ duration: 0.3 }}
                     >
                       <Image
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/rover2.jpeg?height=400&width=600"
                         alt="RAKSHAK Rover Side View"
                         width={600}
                         height={400}
@@ -365,9 +365,13 @@ export default function Home() {
                 </TabsContent>
                 <TabsContent value="components" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {["Jetson Nano", "RPLIDAR A1", "Pixhawk"].map((component, index) => (
+                    {[
+                      { name: "Jetson Nano", image: "/jetson.jpg" },
+                      { name: "RPLIDAR A1", image: "/driver.jpg" },
+                      { name: "Pixhawk", image: "/pixhack.jpg" },
+                    ].map((component, index) => (
                       <motion.div
-                        key={component}
+                        key={component.name}
                         className="overflow-hidden rounded-lg"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -376,22 +380,26 @@ export default function Home() {
                         whileHover={{ scale: 1.05 }}
                       >
                         <Image
-                          src="/placeholder.svg?height=300&width=400"
-                          alt={component}
+                          src={`${component.image}?height=300&width=400`}
+                          alt={component.name}
                           width={400}
                           height={300}
                           className="object-cover w-full h-full transition-transform hover:scale-105"
                         />
-                        <p className="mt-2 text-center font-medium">{component}</p>
+                        <p className="mt-2 text-center font-medium">{component.name}</p>
                       </motion.div>
                     ))}
                   </div>
+
                 </TabsContent>
                 <TabsContent value="development" className="mt-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {["Early Prototype", "Software Development"].map((stage, index) => (
+                    {[
+                      { stage: "Early Prototype", image: "/devep1.jpeg" },
+                      { stage: "Software Development", image: "/devep2.jpeg" },
+                    ].map((item, index) => (
                       <motion.div
-                        key={stage}
+                        key={item.stage}
                         className="overflow-hidden rounded-lg"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -400,39 +408,36 @@ export default function Home() {
                         whileHover={{ scale: 1.03 }}
                       >
                         <Image
-                          src="/placeholder.svg?height=400&width=600"
-                          alt={stage}
+                          src={`${item.image}?height=400&width=600`}
+                          alt={item.stage}
                           width={600}
                           height={400}
                           className="object-cover w-full h-full transition-transform hover:scale-105"
                         />
-                        <p className="mt-2 text-center font-medium">{stage}</p>
+                        <p className="mt-2 text-center font-medium">{item.stage}</p>
                       </motion.div>
                     ))}
                   </div>
                 </TabsContent>
                 <TabsContent value="testing" className="mt-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {["Outdoor Testing", "Navigation Testing"].map((test, index) => (
-                      <motion.div
-                        key={test}
-                        className="overflow-hidden rounded-lg"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1, duration: 0.5 }}
-                        whileHover={{ scale: 1.03 }}
-                      >
-                        <Image
-                          src="/placeholder.svg?height=400&width=600"
-                          alt={test}
-                          width={600}
-                          height={400}
-                          className="object-cover w-full h-full transition-transform hover:scale-105"
-                        />
-                        <p className="mt-2 text-center font-medium">{test}</p>
-                      </motion.div>
-                    ))}
+                  <div className="grid grid-cols-1 gap-6">
+                    <motion.div
+                      className="overflow-hidden rounded-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.03 }}
+                    >
+                      <Image
+                        src="/final.png?height=400&width=600"
+                        alt="Outdoor Testing"
+                        width={600}
+                        height={400}
+                        className="object-cover w-full h-full transition-transform hover:scale-105"
+                      />
+                      <p className="mt-2 text-center font-medium">Outdoor Testing</p>
+                    </motion.div>
                   </div>
                 </TabsContent>
               </Tabs>
@@ -579,13 +584,13 @@ export default function Home() {
                 },
                 {
                   name: "Tanishq Jain",
-                  image: "/placeholder.svg?height=400&width=600",
+                  image: "/tanishq.png?height=400&width=600",
                   role: "CSE - A",
                   description: "24BD1A051T",
                 },
                 {
                   name: "Shaik Mohammed Omar",
-                  image: "/placeholder.svg?height=400&width=600",
+                  image: "/image.png?height=400&width=600",
                   role: "CSE - A",
                   description: "24BD1A051J",
                 },
